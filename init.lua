@@ -196,6 +196,10 @@ vim.keymap.set('n', '<leader>t', function()
   vim.cmd 'startinsert'
 end, { noremap = true, silent = true })
 
+-- Keymaps for Bufferline
+vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { noremap = true })
+
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
@@ -947,6 +951,7 @@ require('lazy').setup({
   require 'kickstart.plugins.transparent',
   require 'kickstart.plugins.comments',
   require 'kickstart.plugins.lualine',
+  require 'kickstart.plugins.bufferline',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
