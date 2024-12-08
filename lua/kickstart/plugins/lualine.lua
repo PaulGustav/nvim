@@ -9,7 +9,7 @@ return {
         component_seperators = '',
       },
       sections = {
-        lualine_c = { { 'filename', color = { fg = '#56fc5b', bg = '#5b615b', gui = 'bold' } } },
+        lualine_c = { { 'filename', path = 1, color = { fg = '#56fc5b', bg = '#5b615b', gui = 'bold' } } },
       },
     }
   end,

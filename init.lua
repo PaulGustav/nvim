@@ -199,6 +199,7 @@ end, { noremap = true, silent = true })
 -- Keymaps for Bufferline
 vim.api.nvim_set_keymap('n', '<Tab>', ':BufferLineCycleNext<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>q', ':bd!<CR>', { noremap = true })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
