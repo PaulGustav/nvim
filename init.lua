@@ -191,7 +191,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<leader>t', function()
-  vim.cmd 'vsplit'
+  vim.cmd 'split'
   vim.cmd 'terminal'
   vim.cmd 'startinsert'
 end, { noremap = true, silent = true })
