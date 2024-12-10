@@ -107,6 +107,10 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+-- NeoTree Transparent
+vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -864,7 +868,8 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'catppuccin' -- 'vscode'
+      -- vim.cmd.colorscheme 'vscode'
+      vim.cmd.colorscheme 'catppuccin'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'

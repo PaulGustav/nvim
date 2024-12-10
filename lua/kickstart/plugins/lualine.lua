@@ -4,7 +4,8 @@ return {
   config = function()
     require('lualine').setup {
       options = {
-        theme = 'catppuccin', -- 'vscode'
+        -- theme = 'vscode',
+        theme = 'catppuccin',
         section_seperators = '',
         component_seperators = '',
       },
