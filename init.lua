@@ -117,6 +117,11 @@ vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', { noremap = true, silent = true })
 
+vim.api.nvim_del_keymap('n', '<C-h>')
+vim.api.nvim_del_keymap('n', '<C-j>')
+vim.api.nvim_del_keymap('n', '<C-k>')
+vim.api.nvim_del_keymap('n', '<C-l>')
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
