@@ -111,6 +111,12 @@ vim.opt.mouse = 'a'
 vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
 
+-- Windows Swap remap
+vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', { noremap = true, silent = true })
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -260,6 +266,15 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  {
+    'neoclide/coc.nvim',
+    branch = 'release',
+    config = function()
+      vim.cmd [[
+        let g:coc_global_extensions = ['coc-tailwindcss', 'coc-snippets', 'coc-pairs']
+      ]]
+    end,
+  },
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -638,8 +653,8 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         pyright = {},
-        rust_analyzer = {},
-        tailwindcss = {},
+        -- rust_analyzer = {},
+        -- tailwindcss = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
