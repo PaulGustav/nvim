@@ -117,11 +117,6 @@ vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', { noremap = true, silent = true })
 
-vim.api.nvim_del_keymap('n', '<C-h>')
-vim.api.nvim_del_keymap('n', '<C-j>')
-vim.api.nvim_del_keymap('n', '<C-k>')
-vim.api.nvim_del_keymap('n', '<C-l>')
-
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -224,12 +219,6 @@ vim.api.nvim_set_keymap('n', '<leader>q', ':bd!<CR>', { noremap = true })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
