@@ -968,6 +968,7 @@ require('lazy').setup({
   require 'kickstart.plugins.comments',
   require 'kickstart.plugins.lualine',
   require 'kickstart.plugins.bufferline',
+  require 'kickstart.plugins.tmux-nvim',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
