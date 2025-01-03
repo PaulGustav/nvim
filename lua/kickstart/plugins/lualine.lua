@@ -5,7 +5,8 @@ return {
     require('lualine').setup {
       options = {
         -- theme = 'vscode',
-        theme = 'catppuccin',
+        theme = 'gruvbox',
+        -- theme = 'catppuccin',
         section_seperators = '',
         component_seperators = '',
       },
