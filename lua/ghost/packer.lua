@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   }
 
   use ({
-	  --'rose-pine/neovim',
+	  -- 'rose-pine/neovim',
       'ellisonleao/gruvbox.nvim',
 	  --as = 'rose-pine',
 	  as = 'gruvbox',
