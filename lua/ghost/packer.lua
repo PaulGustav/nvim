@@ -14,12 +14,17 @@ return require('packer').startup(function(use)
 
   use ({
 	  -- 'rose-pine/neovim',
-      'ellisonleao/gruvbox.nvim',
+      'shaunsingh/nord.nvim',
+      -- 'ellisonleao/gruvbox.nvim',
 	  --as = 'rose-pine',
-	  as = 'gruvbox',
+	  -- as = 'gruvbox',
+      as = 'nord',
 	  config = function()
 		  --vim.cmd('colorscheme rose-pine')
-		  vim.cmd('colorscheme gruvbox')
+		  -- vim.cmd('colorscheme gruvbox')
+          vim.g.nord_disable_background = true
+          require("nord").set()
+		  vim.cmd('colorscheme nord')
 	  end
   })
 

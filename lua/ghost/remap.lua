@@ -37,6 +37,9 @@ function OpenFloatingTerminal()
   vim.api.nvim_win_set_option(win, "relativenumber", false)
 
   vim.api.nvim_command("startinsert")
+
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#4C566A', bg = 'none' })
 end
 
 function OpenFloatingLazygit()

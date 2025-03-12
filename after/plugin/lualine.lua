@@ -2,7 +2,8 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     --theme = 'rose-pine',
-    theme = 'gruvbox',
+    -- theme = 'gruvbox',
+    theme = 'nord',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
