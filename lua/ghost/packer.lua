@@ -12,6 +12,13 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- using packer.nvim
+  use {
+      'akinsho/bufferline.nvim',
+      tag = "*",
+      requires = 'nvim-tree/nvim-web-devicons'
+  }
+
   use ({
 	  -- 'rose-pine/neovim',
       'shaunsingh/nord.nvim',

@@ -1,18 +1,28 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 
+-- Filesystem
+-- vim.keymap.set("n", "<leader>cd", vim.cmd.)
+
+-- Movement
 vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', { noremap = true, silent = true })
 
+-- Windows & Buffer
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<leader>so", vim.cmd.w)
 vim.keymap.set("n", "<leader>v", vim.cmd.vnew)
 vim.keymap.set("n", "<leader>n", vim.cmd.new)
 vim.keymap.set("n", "<leader>o", ":Neotree filesystem reveal right<CR>")
 
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<C-c>", ":bdelete!<CR>")
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { buffer = buf, noremap = true, silent = true })
+
+vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
 function OpenFloatingTerminal()
   local buf = vim.api.nvim_create_buf(false, true) 
