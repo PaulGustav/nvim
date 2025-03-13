@@ -1,6 +1,11 @@
 return {
     "folke/noice.nvim",
     event = "VeryLazy",
+    config = function()
+        require("notify").setup({
+            background_colour = "Normal", -- 🌟 Verwendet die Hintergrundfarbe der `Normal` Gruppe
+        })
+    end,
     opts = {},
     dependencies = {
         "MunifTanjim/nui.nvim",
