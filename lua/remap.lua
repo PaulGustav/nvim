@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>ls", ":Lazy sync<CR>")
+vim.keymap.set("n", "<leader>r", ":Lazy sync<CR>")
 
 -- Filesystem
 -- vim.keymap.set("n", "<leader>cd", vim.cmd.)
