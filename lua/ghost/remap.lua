@@ -6,8 +6,9 @@ vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', { noremap = true, sil
 vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>v", vim.cmd.vnew)
-vim.keymap.set("n", "<leader>w", vim.cmd.new)
+vim.keymap.set("n", "<leader>n", vim.cmd.new)
 vim.keymap.set("n", "<leader>o", ":Neotree filesystem reveal right<CR>")
 
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
