@@ -25,7 +25,12 @@ return require('packer').startup(function(use)
           vim.g.nord_disable_background = true
           require("nord").set()
 		  vim.cmd('colorscheme nord')
-	  end
+	  end,
+      opts = function()
+          return {
+              transparent = true
+          }
+      end
   })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
