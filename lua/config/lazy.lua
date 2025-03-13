@@ -30,4 +30,5 @@ require("lazy").setup({
   require "plugins.themes",
   require "plugins.comments",
   require "plugins.noice",
+  require "plugins.neotree",
 })

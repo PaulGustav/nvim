@@ -2,16 +2,23 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     config = function()
+        -- Konfiguriere nvim-notify zuerst
         require("notify").setup({
-            background_colour = "Normal", -- 🌟 Verwendet die Hintergrundfarbe der `Normal` Gruppe
+            background_colour = "#1e1e2e",  -- Setze eine Hintergrundfarbe (z.B. dunkel)
+        })
+
+        -- Jetzt die noice.nvim Konfiguration
+        require("noice").setup({
+            lsp = {
+                progress = { enabled = true }, -- Beispiel: LSP Fortschritt anzeigen
+            },
+            -- Hier kannst du weiter Anpassungen an Noice vornehmen
         })
     end,
     opts = {},
     dependencies = {
         "MunifTanjim/nui.nvim",
-        -- OPTIONAL:
-        --   `nvim-notify` is only needed, if you want to use the notification view.
-        --   If not available, we use `mini` as the fallback
-        "rcarriga/nvim-notify",
-    }
+        "rcarriga/nvim-notify",  -- Optional, nur wenn du Notify benötigst
+    },
 }
+
