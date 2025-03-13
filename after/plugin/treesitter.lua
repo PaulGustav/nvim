@@ -1,3 +1,5 @@
+vim.api.nvim_set_hl(0, "@keyword", { fg = "#b48ead" }) -- Nord 15, purple
+
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all" (the listed parsers MUST always be installed)
   ensure_installed = { "javascript", "python", "toml", "json", "sql", "typescript", "rust", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
