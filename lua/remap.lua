@@ -12,10 +12,15 @@ vim.keymap.set("n", "-", "<C-x>")
 local opts = { noremap = true, silent = true}
 
 -- Movement
-vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', opts)
+
+vim.keymap.set("n", "<leader>h", "<C-w><")
+vim.keymap.set("n", "<leader>j", "<C-w>-")
+vim.keymap.set("n", "<leader>k", "<C-w>+")
+vim.keymap.set("n", "<leader>l", "<C-w>>")
 
 -- Windows & Buffer
 vim.keymap.set("n", "<C-s>", vim.cmd.w)

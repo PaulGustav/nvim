@@ -10,16 +10,25 @@ return {
             lsp = {
                 progress = { enabled = true },
             },
-            cmdline = {
-                view = "cmdline_popup",
-            },
-            popupmenu = {
-                border = {
-                    style = "none",
+            views = {
+                cmdline_popup = {
+                    win_options = {
+                        winhighlight = "NormalFloat:NormalFloat,FloatBorder:MyTransparentBorder",
+                    },
                 },
-            },
-        })
-    end,
+                -- Falls du andere Views wie popupmenu nutzt, füge sie hier hinzu, z. B.:
+                -- popupmenu = {
+                    --   win_options = {
+                        --     winhighlight = "NormalFloat:NormalFloat,FloatBorder:MyTransparentBorder",
+                        --   },
+                        -- },
+                    },
+                })
+
+                -- Benutzerdefinierte Highlight-Gruppe für transparente Ränder definieren
+                vim.api.nvim_set_hl(0, "MyTransparentBorder", { bg = "none" })
+                vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "none" })
+            end,
     opts = {},
     dependencies = {
         "MunifTanjim/nui.nvim",
