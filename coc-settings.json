@@ -1,8 +1,0 @@
-{
-  "snippets.ultisnips.pythonPrompt": false,
-  "tailwindCSS.includeLanguages": {
-    "rust": "html",           // Rust-Dateien als HTML behandeln
-    "typescriptreact": "html" // Dioxus-Komponenten als HTML behandeln
-  },
-  "coc.source.tailwindCSS.enable": true
-}
