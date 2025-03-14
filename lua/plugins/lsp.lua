@@ -1,60 +1,57 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    { "neovim/nvim-lspconfig" },
+    { "williamboman/mason.nvim" },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("mason").setup()
 
-      lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = {
-              globals = { "vim" },
-            },
-          },
-        },
-      })
+            local servers = {
+                "lua_ls",
+                "rust_analyzer",
+                "clangd",
+                "tailwindcss",
+                "pyright",
+                "html",
+                "ts_ls",
+            }
 
-      lspconfig.pyright.setup({
-        capabilities = capabilities,
-      })
+            require("mason-lspconfig").setup({
+                ensure_installed = servers,
+            })
 
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local opts = { buffer = args.buf }
-          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-          print("LSP attached!") -- Debugging-Ausgabe
+            local on_attach = function(client, bufnr)
+                local opts = { noremap = true, silent = true }
+                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+                vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+            end
+
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+            for _, server in ipairs(servers) do
+                require("lspconfig")[server].setup({
+                    on_attach = on_attach,
+                    capabilities = capabilities,
+                })
+            end
         end,
-      })
-    end,
-    dependencies = { "williamboman/mason-lspconfig.nvim", "hrsh7th/nvim-cmp" },
-  },
-
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
     },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        sources = {
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "path" },
-        },
-        mapping = {
-          ["<Tab>"] = cmp.mapping.select_next_item(),
-          ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-e>"] = cmp.mapping.abort(),
-        },
-      })
-    end,
-  },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    {
+        "hrsh7th/nvim-cmp",
+        config = function()
+            local cmp = require("cmp")
+            cmp.setup({
+                sources = {
+                    { name = "nvim_lsp" },
+                },
+                mapping = {
+                    ["<C-n>"] = cmp.mapping.select_next_item(),
+                    ["<C-p>"] = cmp.mapping.select_prev_item(),
+                    ["<C-y>"] = cmp.mapping.confirm(),
+                },
+            })
+        end,
+    },
 }
