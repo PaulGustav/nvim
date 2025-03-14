@@ -6,7 +6,7 @@ return {
                 icons_enabled = true,
                 --theme = 'rose-pine',
                 -- theme = 'gruvbox',
-                theme = "kanagawa-dragon",
+                theme = "kanagawa",
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {

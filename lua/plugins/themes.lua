@@ -22,11 +22,15 @@ return {
             overrides = function(colors)
                 local theme = colors.theme
                 return {
-                    TelescopeBorder = { bg = "none" }, -- Entfernt den Hintergrund der Borders
-                    TelescopeNormal = { bg = "none" }, -- Optional: Entfernt den Hintergrund des Hauptfensters
-                    TelescopePromptBorder = { bg = "none" }, -- Für die Eingabezeile
-                    TelescopeResultsBorder = { bg = "none" }, -- Für die Ergebnisse
-                    TelescopePreviewBorder = { bg = "none" }, -- Für die Vorschau
+                    NormalFloat = { bg = "none" },
+                    FloatBorder = { bg = "none" },
+                    FloatTitle = { bg = "none" },
+
+                    TelescopeBorder = { bg = "none" },
+                    TelescopeNormal = { bg = "none" },
+                    TelescopePromptBorder = { bg = "none" },
+                    TelescopeResultsBorder = { bg = "none" },
+                    TelescopePreviewBorder = { bg = "none" },
                 }
             end,
         })
