@@ -1,4 +1,4 @@
-Dependancies:
+Dependencies:
 - nodeJS
 - ripgrep
 
