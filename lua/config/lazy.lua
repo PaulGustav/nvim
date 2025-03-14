@@ -20,15 +20,4 @@ require("lazy").setup({
     { import = "plugins" },
   },
   checker = { enabled = false },
-
-  require "plugins.essentials",
-  require "plugins.telescope",
-  require "plugins.treesitter",
-  require "plugins.lualine",
-  require "plugins.bufferline",
-  require "plugins.autopairs",
-  require "plugins.themes",
-  require "plugins.comments",
-  require "plugins.noice",
-  require "plugins.neotree",
 })
