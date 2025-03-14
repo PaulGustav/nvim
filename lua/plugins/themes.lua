@@ -11,8 +11,8 @@ return {
     selected_theme.repo,
     name = selected_theme.alias,
     config = function()
-        vim.g.nord_disable_background = true
-        vim.cmd('colorscheme nord')
+        vim.g.nord_disable_background = true -- Nord specific
+        vim.cmd('colorscheme', name)
         transparent = true
     end,
 }
