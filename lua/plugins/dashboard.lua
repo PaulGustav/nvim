@@ -5,7 +5,7 @@ return {
         require('dashboard').setup({
             theme = "doom",
             config = {
-                header = vim.split(string.rep("\n", 8) .. [[
+                header = vim.split(string.rep("\n", 12) .. [[
                 ███████╗███████╗██████╗ ██╗   ██╗██╗   ██╗███████╗    ██╗
                 ██╔════╝██╔════╝██╔══██╗██║   ██║██║   ██║██╔════╝    ██║
                 ███████╗█████╗  ██████╔╝██║   ██║██║   ██║███████╗    ██║
