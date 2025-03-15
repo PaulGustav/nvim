@@ -22,14 +22,17 @@ vim.keymap.set("n", "<leader>j", "<C-w>-")
 vim.keymap.set("n", "<leader>k", "<C-w>+")
 vim.keymap.set("n", "<leader>l", "<C-w>>")
 
--- Windows & Buffer
+-- Windows & Buffer & Tabs
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.w)
 vim.keymap.set("n", "<leader>v", vim.cmd.vnew)
 vim.keymap.set("n", "<leader>n", vim.cmd.new)
 vim.keymap.set("n", "<leader>o", ":Neotree filesystem reveal right<CR>")
 
-vim.keymap.set("n", "<C-q>", vim.cmd.q)
+-- New Tab
+vim.keymap.set("n", "<leader>et", ":tabedit<CR>", opts)
+
+vim.keymap.set("n", "<C-q>", vim.cmd.qa)
 vim.keymap.set("n", "<leader>q", ":bdelete!<CR>")
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>", { buffer = buf, noremap = true, silent = true })
 
