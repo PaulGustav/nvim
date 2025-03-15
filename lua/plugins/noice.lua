@@ -7,6 +7,23 @@ return {
         })
 
         require("noice").setup({
+            cmdline = {
+                enabled = true,
+                view = "cmdline_popup",
+                opts = {
+                    position = {
+                        row = 3,
+                        col = "50%",
+                    },
+                    size = {
+                        width = "30%",
+                        height = 1,
+                    },
+                    border = {
+                        style = "rounded",
+                    },
+                },
+            },
             lsp = {
                 progress = { enabled = true },
             },
@@ -16,12 +33,6 @@ return {
                         winhighlight = "NormalFloat:NormalFloat,FloatBorder:MyTransparentBorder",
                     },
                 },
-                -- Falls du andere Views wie popupmenu nutzt, füge sie hier hinzu, z. B.:
-                -- popupmenu = {
-                    --   win_options = {
-                        --     winhighlight = "NormalFloat:NormalFloat,FloatBorder:MyTransparentBorder",
-                        --   },
-                        -- },
                     },
                 })
 
