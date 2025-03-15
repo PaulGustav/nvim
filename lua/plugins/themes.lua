@@ -35,7 +35,6 @@ return {
             end,
         })
 
-        vim.cmd("colorscheme kanagawa")
         -- vim.g.nord_disable_background = true -- Nord specific
         vim.cmd('colorscheme ' .. alias .. "-dragon")
     end,

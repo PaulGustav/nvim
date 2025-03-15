@@ -4,8 +4,6 @@ return {
         require('lualine').setup {
             options = {
                 icons_enabled = true,
-                --theme = 'rose-pine',
-                -- theme = 'gruvbox',
                 theme = "kanagawa",
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
