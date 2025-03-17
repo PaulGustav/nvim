@@ -41,5 +41,6 @@ return {
 
         -- vim.g.nord_disable_background = true -- Nord specific
         vim.cmd('colorscheme ' .. alias)
+        vim.api.nvim_set_hl(0, 'LineNr', { fg = '#6cd4cb' })
     end,
 }
