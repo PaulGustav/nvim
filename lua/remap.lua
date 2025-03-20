@@ -2,20 +2,11 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>r", ":Lazy sync<CR>")
 
--- Filesystem
--- vim.keymap.set("n", "<leader>cd", vim.cmd.)
-
 -- Increment / Decrement
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 
 local opts = { noremap = true, silent = true}
-
--- Movement
--- vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', opts)
 
 vim.keymap.set("n", "<leader>h", "<C-w><")
 vim.keymap.set("n", "<leader>j", "<C-w>-")

@@ -24,6 +24,9 @@ return {
                     },
                 },
             },
+            popupmenu = {
+                backend = "nui",
+            },
             lsp = {
                 progress = { enabled = true },
             },
@@ -37,8 +40,6 @@ return {
                 })
 
                 -- Benutzerdefinierte Highlight-Gruppe für transparente Ränder definieren
-                vim.api.nvim_set_hl(0, "MyTransparentBorder", { bg = "none" })
-                vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "none" })
             end,
     opts = {},
     dependencies = {

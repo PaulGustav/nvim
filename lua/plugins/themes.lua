@@ -1,6 +1,6 @@
 local themes = {
     nord = { repo = "arcticicestudio/nord-vim", alias = "nord" },
-    gruvbox = { repo = "morhetz/gruvbox", alias = "gruvbox" },
+    gruvbox = { repo = "ellisonleao/gruvbox.nvim", alias = "gruvbox" },
     tokyonight = { repo = "folke/tokyonight.nvim", alias = "tokyonight" },
     catppuccin = { repo = "catppuccin/nvim", alias = "catppuccin" },
     vscode = { repo = "Mofiqul/vscode.nvim", alias = "vscode" },
@@ -8,39 +8,44 @@ local themes = {
     rosepine = { repo = "rose-pine/nvim", alias = "rose-pine" },
 }
 
-local selected_theme = themes["rosepine"]
+local selected_theme = themes["gruvbox"]
 local alias = selected_theme.alias
 
 return {
     selected_theme.repo,
     name = alias,
+    priority = 1000,
     config = function()
         require(alias).setup({
-            styles = { transparency = true },
+            terminal_colors = true, -- add neovim terminal colors
+            undercurl = true,
+            underline = true,
+            bold = true,
+            italic = {
+                strings = true,
+                emphasis = true,
+                comments = true,
+                operators = false,
+                folds = true,
+            },
+            strikethrough = true,
+            invert_selection = false,
+            invert_signs = false,
+            invert_tabline = false,
+            invert_intend_guides = false,
+            inverse = true, -- invert background for search, diffs, statuslines and errors
+            contrast = "", -- can be "hard", "soft" or empty string
+            palette_overrides = {},
+            overrides = {},
+            dim_inactive = false,
+            transparent_mode = false,
+      })
 
-            -- -- Deine bestehenden Optionen
-            -- transparent = true, -- Stelle sicher, dass Transparenz aktiviert ist
-            -- -- Weitere Optionen wie theme = "wave" etc.
-            --
-            -- Kanagawa
-            -- overrides = function(colors)
-            --     local theme = colors.theme
-            --     return {
-            --         NormalFloat = { bg = "none" },
-            --         FloatBorder = { bg = "none" },
-            --         FloatTitle = { bg = "none" },
-            --
-            --         TelescopeBorder = { bg = "none" },
-            --         TelescopeNormal = { bg = "none" },
-            --         TelescopePromptBorder = { bg = "none" },
-            --         TelescopeResultsBorder = { bg = "none" },
-            --         TelescopePreviewBorder = { bg = "none" },
-            --     }
-            -- end,
-        })
-
-        -- vim.g.nord_disable_background = true -- Nord specific
-        vim.cmd('colorscheme ' .. alias)
-        vim.api.nvim_set_hl(0, 'LineNr', { fg = '#6cd4cb' })
+        vim.o.background = "dark"
+        vim.cmd("colorscheme " .. alias)
+        vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
+        vim.api.nvim_set_hl(0, "MyTransparentBorder", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "none" })
+        -- vim.api.nvim_set_hl(0, 'LineNr', { fg = '#de733a' })
     end,
 }
