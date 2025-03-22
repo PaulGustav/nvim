@@ -37,10 +37,10 @@ return {
             contrast = "soft", -- can be "hard", "soft" or empty string
             palette_overrides = {},
             overrides = {
-                ["@function"] = { fg = "#d4be98" },
+                -- ["@function"] = { fg = "#d4be98" },
             },
             dim_inactive = false,
-            transparent_mode = false,
+            transparent_mode = true,
       })
 
         vim.o.background = "dark"
