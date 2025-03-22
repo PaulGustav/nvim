@@ -34,9 +34,11 @@ return {
             invert_tabline = false,
             invert_intend_guides = false,
             inverse = true, -- invert background for search, diffs, statuslines and errors
-            contrast = "", -- can be "hard", "soft" or empty string
+            contrast = "soft", -- can be "hard", "soft" or empty string
             palette_overrides = {},
-            overrides = {},
+            overrides = {
+                ["@function"] = { fg = "#d4be98" },
+            },
             dim_inactive = false,
             transparent_mode = false,
       })
