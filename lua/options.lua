@@ -23,3 +23,14 @@ vim.opt.scrolloff = 8
 vim.signcolumn = "yes"
 
 vim.opt.updatetime = 50
+
+vim.cmd("syntax enable")
+vim.cmd([[
+    hi Normal guibg=NONE
+    hi! link TSFunction Normal
+    hi! link TSKeyword Normal
+    hi! link TSVariable Normal
+    hi! link TSType Normal
+    hi! link TSString Normal
+]])
+
