@@ -33,11 +33,16 @@ return {
             invert_signs = false,
             invert_tabline = false,
             invert_intend_guides = false,
-            inverse = true, -- invert background for search, diffs, statuslines and errors
+            inverse = false, -- invert background for search, diffs, statuslines and errors
             contrast = "soft", -- can be "hard", "soft" or empty string
             palette_overrides = {},
             overrides = {
-                -- ["@function"] = { fg = "#d4be98" },
+                Function = { fg = "#ebdbb2", bold = false },
+                ["@function.call"] = { fg = "#ebdbb2", bold = false },
+                ["@method"] = { fg = "#ebdbb2", bold = false },
+                ["@method.call"] = { fg = "#ebdbb2", bold = false },
+                ["@function.builtin.rust"] = { fg = "#ebdbb2", bold = false },
+                ["@function.nvim"] = { fg = "#ebdbb2", bold = false },
             },
             dim_inactive = false,
             transparent_mode = true,
