@@ -1,5 +1,7 @@
 return {
-    { "neovim/nvim-lspconfig" },
+    {
+        "neovim/nvim-lspconfig",
+    },
     { "williamboman/mason.nvim" },
     {
         "williamboman/mason-lspconfig.nvim",
@@ -34,6 +36,17 @@ return {
                     capabilities = capabilities,
                 })
             end
+
+            vim.diagnostic.config({
+                virtual_text = true,
+                float = {
+                    border = "rounded",
+                    source = "always",
+                    max_width = 80,
+                },
+            })
+
+            vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic in float" })
         end,
     },
     { "hrsh7th/nvim-cmp" },
