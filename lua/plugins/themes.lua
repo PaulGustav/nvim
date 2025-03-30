@@ -37,12 +37,12 @@ return {
             contrast = "soft", -- can be "hard", "soft" or empty string
             palette_overrides = {},
             overrides = {
-                -- Function = { fg = "#ebdbb2", bold = false },
-                -- ["@function.call"] = { fg = "#ebdbb2", bold = false },
-                -- ["@method"] = { fg = "#ebdbb2", bold = false },
-                -- ["@method.call"] = { fg = "#ebdbb2", bold = false },
-                -- ["@function.builtin.rust"] = { fg = "#ebdbb2", bold = false },
-                -- ["@function.nvim"] = { fg = "#ebdbb2", bold = false },
+                Function = { fg = "#ebdbb2", bold = false },
+                ["@function.call"] = { fg = "#ebdbb2", bold = false },
+                ["@method"] = { fg = "#ebdbb2", bold = false },
+                ["@method.call"] = { fg = "#ebdbb2", bold = false },
+                ["@function.builtin.rust"] = { fg = "#ebdbb2", bold = false },
+                ["@function.nvim"] = { fg = "#ebdbb2", bold = false },
             },
             dim_inactive = false,
             transparent_mode = true,
