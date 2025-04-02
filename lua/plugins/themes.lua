@@ -51,6 +51,7 @@ return {
         vim.o.background = "dark"
         vim.cmd("colorscheme " .. alias)
         vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
+        vim.api.nvim_set_hl(0, 'TabLineFill', { bg = 'NONE' })
         vim.api.nvim_set_hl(0, "MyTransparentBorder", { bg = "none" })
         vim.api.nvim_set_hl(0, "NoiceCmdlinePopupBorder", { bg = "none" })
         -- vim.api.nvim_set_hl(0, 'LineNr', { fg = '#de733a' })
