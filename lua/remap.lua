@@ -25,7 +25,8 @@ vim.keymap.set("n", "<C-s>", vim.cmd.w)
 vim.keymap.set("n", "<leader>so", vim.cmd.w)
 vim.keymap.set("n", "<leader>v", vim.cmd.vnew)
 vim.keymap.set("n", "<leader>n", vim.cmd.new)
-vim.keymap.set("n", "<leader>o", ":Neotree filesystem reveal right<CR>")
+
+vim.keymap.set("n", "<C-b>", ":Neotree toggle<CR>", opts)
 
 -- New Tab
 vim.keymap.set("n", "<leader>et", ":tabedit<CR>", opts)
