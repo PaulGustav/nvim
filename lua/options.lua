@@ -6,6 +6,16 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rust",
+  callback = function()
+    vim.opt_local.tabstop = 2
+    vim.opt_local.softtabstop = 2    -- Ensures Tab inserts 2 spaces
+    vim.opt_local.shiftwidth = 2     -- Ensures indentation aligns
+    vim.opt_local.expandtab = true   -- Ensures spaces, not tab characters
+  end,
+})
+
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
